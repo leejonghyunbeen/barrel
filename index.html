@@ -13,6 +13,36 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.js"></script>
 </head>
+<style>
+    .start-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; /* 기본은 숨김 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-inner {
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-inner button {
+  color: #ffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+</style>
 <body>
     <header>
         <div class="header_top">
@@ -293,6 +323,19 @@
             </div>
         </div>
     </header>
+    <div class="start-popup" id="startPopup">
+        <div class="popup-inner">
+          <p><img src="./img/250508_popup_open.jpg" alt=""></p>
+          <div class="btn_box">
+            <div class="input_box">
+              <input type="checkbox" id="noToday">
+              <span>오늘 하루 닫기</span>
+            </div>
+            <button id="closePopupBtn">[닫기]</button>
+          </div>
+        </div>
+      </div>
+      
     <main class="main_main">
         <div class="fiex_btn">
             <a href="#">
@@ -1136,7 +1179,7 @@
 </body>
 <script>
 
-  
+
     
 </script>
 <script src="./js/index.js"></script>

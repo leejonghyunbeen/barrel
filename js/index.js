@@ -1,3 +1,13 @@
+
+
+
+// 
+
+window.addEventListener("load", function () {
+  alert("데스크탑 버전으로 1200px 이상에서 권장됩니다.");
+});
+
+
 let banner_slide = new Swiper('.banner_swiper', {
     slidesPerView: 1,
     loop : true,
@@ -408,3 +418,46 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+
+window.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("startPopup");
+  const closeBtn = document.getElementById("closePopupBtn");
+  const noToday = document.getElementById("noToday");
+
+  // 페이지 로드 시 쿠키 체크
+  if (getCookie("noPopupToday") !== "true") {
+    popup.style.display = "flex";
+  }
+
+  // '오늘 하루 닫기' 체크박스 클릭 시
+  noToday.addEventListener("change", function () {
+    if (this.checked) {
+      setCookie("noPopupToday", "true", 1);
+      popup.style.display = "none";
+    }
+  });
+
+  // 닫기 버튼 클릭 시
+  closeBtn.addEventListener("click", function () {
+    if (noToday.checked) {
+      setCookie("noPopupToday", "true", 1);
+    }
+    popup.style.display = "none";
+  });
+
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days*24*60*60*1000));
+    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+    console.log(`쿠키 설정: ${name}=${value}`);
+  }
+
+  function getCookie(name) {
+    const value = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return value ? value.pop() : '';
+  }
+});
+
+
+

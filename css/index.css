@@ -703,27 +703,54 @@ height: 35px;
     align-items: center;
     z-index: 1000;
   }
-  
-  .fiex_btn .up {
-    margin-top: 10px;
-    padding: 5px;
-    background: #00b4e6 !important;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    width: 40px;
-    height: 40px;
+.btn_box{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    background-color: #000;
+    padding: 10px;
+}
+.btn_box input{
+    padding: 5px;
+    width:15px;
+    height: 15px;
+}
+.btn_box span{
     color: #fff;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .fiex_btn.show-up .up {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+    font-size: 12px;
+}
+.fiex_btn .up {
+margin-top: 10px;
+padding: 5px;
+background: #00b4e6 !important;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+color: #fff;
+opacity: 0;
+transform: translateY(10px);
+transition: all 0.3s ease;
+pointer-events: none;
+}
+
+.fiex_btn.show-up .up {
+opacity: 1;
+transform: translateY(0);
+pointer-events: auto;
+}
+.input_box{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.popup-inner p{
+    height: 394px;
+}
+.popup-inner p img{
+    height: 100%;
+}
